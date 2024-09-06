@@ -2,3 +2,5 @@ reflex==0.5.9
 python-decouple
 openai
 psycopg2-binary
+gunicorn
+uvicorn
