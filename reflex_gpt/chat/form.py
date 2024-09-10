@@ -1,5 +1,4 @@
 import reflex as rx
-
 from .state import ChatState
 
 def chat_form() -> rx.Component:
@@ -9,7 +8,8 @@ def chat_form() -> rx.Component:
                 name='message',
                 placeholder='Your message',
                 required=True,
-                width='100%'
+                width='100%',
+                on_key_down=ChatState.handle_key_down,
             ),
             rx.hstack(
                 rx.button('Submit', type='submit'),
@@ -18,9 +18,21 @@ def chat_form() -> rx.Component:
                     rx.text("Submitted"),
                     rx.fragment(),
                 )
-                
             )
         ),
         on_submit=ChatState.handle_submit,
         reset_on_submit=True
     )
+
+
+class ChatState:
+    user_did_submit = False
+
+    @staticmethod
+    def handle_submit(values):
+        ChatState.user_did_submit = True
+
+    @staticmethod
+    def handle_key_down(event):
+        if event.key_code == 13:
+            ChatState.handle_submit(event.target.form.values)
