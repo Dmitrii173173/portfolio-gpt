@@ -122,12 +122,27 @@ class ChatState(rx.State):
         )
     
     def get_gpt_messages(self):
+        # Load the promt.json file
+        with open("path/to/promt.json", "r", encoding="utf-8") as file:
+            prompt_data = json.load(file)
+        
+        # Creating the system message using the loaded prompt data
+        system_message = (
+            f"You are an expert at creating recipes like an elite chef. "
+            f"User's name is {prompt_data['name']} ({prompt_data['chinese_name']}). "
+            f"Their professor is {prompt_data['professor']} at {prompt_data['university']}."
+            "Respond in markdown."
+        )
+
+        # Adding the system message to gpt_messages
         gpt_messages = [
             {
                 "role": "system",
-                "content": "You are an expert at creating recipes like an elite chef. Respond in markdown"
+                "content": system_message
             }
         ]
+
+        # Loop through the chat messages and append them to gpt_messages
         for chat_message in self.messages:
             role = 'user'
             if chat_message.is_bot:
@@ -136,6 +151,7 @@ class ChatState(rx.State):
                 "role": role,
                 "content": chat_message.message
             })
+        
         return gpt_messages
 
     async def handle_submit(self, form_data:dict):
