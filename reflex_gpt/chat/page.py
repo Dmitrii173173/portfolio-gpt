@@ -34,7 +34,7 @@ def chat_page():
     return ui.base_layout(
          rx.vstack(
              rx.hstack(
-             rx.heading("Chat Here", size="5"),
+             rx.heading("I am a professional data scientist, ask me about me", size="8"),
              rx.cond(ChatState.not_found, "Not found", "Found"),
              rx.button("+ New Chat", on_click=ChatState.create_new_and_redirect)
             ),
