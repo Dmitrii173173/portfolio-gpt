@@ -34,7 +34,7 @@ def chat_page():
     return ui.base_layout(
          rx.vstack(
              rx.hstack(
-             rx.heading("I am a professional data scientist, ask me about me", size="8"),
+             rx.heading("Hello, my name is 杜铭, I study at Lanzhou University of Technology. My professor is 张玺君.", size="8"),
              rx.cond(ChatState.not_found, "Not found", "Found"),
              rx.button("+ New Chat", on_click=ChatState.create_new_and_redirect)
             ),
@@ -47,5 +47,8 @@ def chat_page():
             spacing="5",
             justify="center",
             min_height="85vh",
-        )
+        ),
+        rx.text("I have experience in ASP.NET Core, JavaScript, Python, C++/C+, Java, Linux, TensorFlow, PyTorch, ResNet, NLP, and related technologies.", 
+                font_size="1.2em", 
+                margin_top="1em")
     )
