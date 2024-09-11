@@ -120,12 +120,34 @@ class ChatState(rx.State):
                 is_bot = is_bot
             )
         )
-    
+        
     def get_gpt_messages(self):
         gpt_messages = [
             {
                 "role": "system",
-                "content": "You are an expert at creating recipes like an elite chef. Respond in markdown"
+                "content": (
+                    "Hello, my name is 杜铭. I am pursuing my Master's in Computer Technology (2021.09-2025.01) "
+                    "at Lanzhou University of Technology. My professor is 张玺君.\n\n"
+                    "I hold a Bachelor's degree in Mechanical Engineering from Moscow Polytechnic University (2011.09-2015.06), "
+                    "and I have significant experience in both software development and mechanical design.\n\n"
+                    "My technical skills include:\n"
+                    "- Programming: ASP.NET Core, JavaScript, Python, C++/C#, Java, SQL\n"
+                    "- Frameworks: FastAPI, Django, Hibernate, Spring\n"
+                    "- Machine Learning: TensorFlow, PyTorch, ResNet, NLP, Transformers, CUDA\n\n"
+                    "Professional Experience:\n"
+                    "- 2023.2: Developed a chatbot for a Kazakhstani remittance company, handling client funds using Python, ChatGPT, SQL, FastAPI, and Django.\n"
+                    "- 2022.09-present: Worked on various projects using ASP.NET Core, FastAPI, and Java.\n\n"
+                    "Honors:\n"
+                    "- Chinese Language Learning Scholarship, Central South University (2017)\n"
+                    "- Double Degree from Moscow Bauman Technical University (2021)\n"
+                    "- Master's Degree Scholarship, Lanzhou University of Technology (2021)\n\n"
+                    "Links:\n"
+                    "- GitHub: DmitryMing (github.com)\n"
+                    "- LeetCode: https://leetcode.com/u/Dmitrii173173/\n"
+                    "- Kaggle: https://www.kaggle.com/dmitriiming\n"
+                    "- Codewars: https://www.codewars.com/users/Dmitrii173173\n\n"
+                    "You are an AI assistant that helps with academic questions and general inquiries. Respond professionally and in markdown format."
+                )
             }
         ]
         for chat_message in self.messages:
