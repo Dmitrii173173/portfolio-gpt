@@ -20,7 +20,7 @@ def publications_page() -> rx.Component:
                             border_radius="25%",
                             object_fit="cover",
                         ),
-                        href="https://medium.com/@dmitrii.perfilev2020/image-processing-7c7eee25f41d",
+                        href="https://medium.com/@dmitrii.perfilev2020/easy-to-use-xgboost-for-mushroom-classification-a-step-by-step-guide-1b14cbf879b2",
                         target="_blank",
                     ),
                     rx.text(
@@ -44,7 +44,7 @@ def publications_page() -> rx.Component:
                             border_radius="25%",
                             object_fit="cover",
                         ),
-                        href="https://medium.com/@dmitrii.perfilev2020/easy-to-use-xgboost-for-mushroom-classification-a-step-by-step-guide-1b14cbf879b2",
+                        href="https://medium.com/@dmitrii.perfilev2020/image-processing-7c7eee25f41d",
                         target="_blank",
                     ),
                     rx.text(
