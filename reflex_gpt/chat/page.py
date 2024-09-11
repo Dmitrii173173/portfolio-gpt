@@ -3,7 +3,6 @@ from reflex_gpt import ui
 from .state import ChatMessage, ChatState
 from .form import chat_form
 
-# Стили для сообщений
 message_style = dict(
     display="inline-block", 
     padding="1em",
@@ -11,7 +10,6 @@ message_style = dict(
     max_width=["30em", "30em", "50em", "50em", "50em", "50em"]
 )
 
-# Функция для получения подробного промпта
 def get_detailed_prompt():
     return """
     Hello, my name is 杜铭. I am pursuing my Master's in Computer Technology (2021.09-2025.01) at Lanzhou University of Technology. My professor is 张玺君. 
@@ -39,11 +37,9 @@ def get_detailed_prompt():
     - Codewars: https://www.codewars.com/users/Dmitrii173173
     """
 
-# Функция для получения краткого промпта с навыками
 def get_skills_prompt():
     return "Hello, my name is 杜铭. I study at Lanzhou University of Technology. My professor is 张玺君. I have experience in ASP.NET Core, JavaScript, Python, C++/C+, Java, Linux, TensorFlow, PyTorch, ResNet, NLP, and related technologies."
 
-# Компонент для отображения сообщения
 def message_box(chat_message: ChatMessage) -> rx.Component:
     return rx.box(
         rx.box(
@@ -59,7 +55,6 @@ def message_box(chat_message: ChatMessage) -> rx.Component:
         width="100%",
     )
 
-# Страница чата
 def chat_page():
     return ui.base_layout(
          rx.vstack(
