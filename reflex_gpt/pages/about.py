@@ -6,7 +6,7 @@ def about_us_page() -> rx.Component:
     # About us Page
     return ui.base_layout(
         rx.vstack(
-            rx.heading("Welcome to Reflex About!", size="9", align="center"),
+            rx.heading("Hello there!", size="9", align="center"),
             rx.text(
                 "Hello, my name is 杜铭. I am pursuing my Master's in Computer Technology (2021.09-2025.01) at Lanzhou University of Technology.",
                 size="4",
